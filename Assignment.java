@@ -5,6 +5,7 @@ public class Assignment {
     public static final int SIZE = 600;
 
     public static void main(String args[]) throws IOException {
+        int val = (int) System.currentTimeMillis();
         File file = new File("Data.txt");
 
         BufferedReader fp = new BufferedReader(new FileReader(file));
@@ -33,63 +34,60 @@ public class Assignment {
                                        // its substrings.
             String DNASequence = createRandomString(types);
             System.out.println(i + 1 + ". " + DNASequence + " \n");
-            ArrayList<String> subStrings = createAllSubstrings(DNASequence, L);
+            ArrayList<String> subStrings = createAllSubstrings(DNASequence, L, D);
             allSubstrings.add(subStrings);
         }
 
-        printAllNeighboursWEditDistance(allSubstrings, D, indel, sub); // traverse thorugh the array and show the output
+        printAllNeighboursWEditDistance(allSubstrings, D, indel, sub, L); // traverse thorugh the array and show the
+                                                                          // output
+        System.out.print("Execution Time:" + ((int) System.currentTimeMillis() - val));
     }
 
     private static void printAllNeighboursWEditDistance(ArrayList<ArrayList<String>> neighbourSubstring, int D,
-            int indel, int sub) throws IOException {
+            int indel, int sub, int L) throws IOException {
         ArrayList<String> result = new ArrayList<>(); // stores all the string that are considered to be shown
         FileWriter fw = new FileWriter("Out.txt");
         fw.append("Results: \n");
-        ArrayList<String> getMSubstrings = neighbourSubstring.get(0); // get the first arraylist
 
-        for (int c = 0; c < getMSubstrings.size(); c++) { // traverse for each element in the first arraylist
-            int index[][] = new int[20][10000];
-            String substring = getMSubstrings.get(c);
-            int i = 1;
-            for (; i < neighbourSubstring.size(); i++) {// traverse through the whole other list of arraylists
-                ArrayList<String> neigbourStr = neighbourSubstring.get(i); // get the list
+        for (int p = 0; p < neighbourSubstring.size(); p++) {
+            // System.out.println("p. " + p);
+            ArrayList<String> getMSubstrings = neighbourSubstring.get(p); // get the list of substrings
+            for (int c = 0; c < getMSubstrings.size(); c++) { // traverse for each element in the all arraylist
+                String substring = getMSubstrings.get(c);
+                if (substring.length() != L) {
+                    continue;
+                }
+                int i = 1;
                 int count = 0;
-                int j = 0;
-                for (; j < neigbourStr.size(); j++) { // traverse through the list
-                    String nStr = neigbourStr.get(j);
-                    int distance = calculateEditDistance(substring, nStr, indel, sub); // checks edit distance
-                    if (distance <= D) { // store all the elements that satisfy the conditions. We can show everything
-                                         // from the reflexive and transitive property of the edit distance.
-                        index[i][count] = j;// i is for the index of the list from which substring belongs to and j is
-                                            // the index of substring.
-                        count++;
+                int prevCount = 0;
+                for (; i < neighbourSubstring.size(); i++) {// traverse through the whole other list of arraylists
+                    // System.out.println("i. " + i);
+                    if (i == p) {
+                        continue;
                     }
-                }
-
-                if (count == 0) { // checks if count doesn't increase then we didn't find any of the neighbour in
-                                  // the concerned substring so no need to check it further.
-                    break;
-                }
-            }
-
-            if (i == neighbourSubstring.size()) { // if able to taverse through the whole list of arraylist then it
-                                                  // means able to find atleast one neighbour in every string
-                result.add(substring); // prints M
-                for (int a = 1; a < index.length; a++) { // here we print all the neighbours for M as they will also
-                                                         // satisfy the conditions from relixive and transitive
-                                                         // property.
-                    ArrayList<String> strings = neighbourSubstring.get(a); // gets the list of the substrings
-                    for (int indexCount = 0; indexCount < index[a].length; indexCount++) {
-                        if (indexCount != 0 && index[a][indexCount] == 0) {
+                    ArrayList<String> neigbourStr = neighbourSubstring.get(i); // get the list
+                    int j = 0;
+                    for (; j < neigbourStr.size(); j++) { // traverse through the list
+                        String nStr = neigbourStr.get(j);
+                        int distance = calculateEditDistance(substring, nStr, indel, sub); // checks edit distance
+                        if (distance <= D) {
+                            count++; // if it satifies the condition then just increase the count
                             break;
-                        } else {
-                            int indexCheck = index[a][indexCount]; // gets the index for the neighbour substring
-                            if (indexCheck < strings.size()) {
-                                String str = strings.get(indexCheck); // print them
-                                result.add(str); // add substrings to the arraylist
-                            }
                         }
                     }
+
+                    if (count == prevCount) { // checks if count doesn't increase then we didn't find any of the
+                                              // neighbour in
+                        // the concerned substring so no need to check it further.
+                        break;
+                    } else {
+                        prevCount = count;
+                    }
+                }
+
+                if (i == neighbourSubstring.size()) { // if able to taverse through the whole list of arraylist then it
+                                                      // means able to find atleast one neighbour in every string
+                    result.add(substring); // prints M
                 }
             }
         }
@@ -148,13 +146,14 @@ public class Assignment {
 
     }
 
-    private static ArrayList<String> createAllSubstrings(String dNASequence, int L) {
+    private static ArrayList<String> createAllSubstrings(String dNASequence, int L, int D) {
         ArrayList<String> result = new ArrayList<>();
 
         for (int i = 0; i < SIZE; i++)
             for (int j = i + 1; j <= SIZE; j++) {
                 String ans = dNASequence.substring(i, j); // gets substring of the array
-                if (ans.length() == L) { // store only substrings of length L
+                if (ans.length() <= (L + D) && ans.length() >= (L - D)) { // store only substrings from length L - D to
+                                                                          // L + D
                     result.add(ans);
                 }
             }
