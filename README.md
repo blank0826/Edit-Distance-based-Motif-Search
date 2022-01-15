@@ -33,13 +33,9 @@ An IDE that supports Java.
 1. Pull this code into any folder.<br />
 2. Open this folder in your preferred IDE.<br />
 3. Build the Project.<br />
-4. Run the [Motif_Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Assignment.java) file.<br />
+4. Run the [Motif_Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Motif%20Search.java) file.<br />
 
-# Screenshots
-## **<ins>Output**</ins><br/><br/>
-
-<img src="https://user-images.githubusercontent.com/33955028/149612902-a9e61fe6-5af9-4d39-b5e9-78a1b0fd9d4a.png" width="620" height="400">
-<img src="https://user-images.githubusercontent.com/33955028/149612820-14f2cc35-3f39-4a0f-9ecd-f9fac62ba1e2.png" width="620" height="400">
+__Check Data.txt and Output.txt for input and output__
   
 # Contact
 ## [Aditya Srivastava](mailto:aditya26052002@gmail.com?subject=GitHub)
