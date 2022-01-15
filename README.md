@@ -5,12 +5,14 @@ This is software that creates 20 different combinations of genes and performs Mo
 The code is written through **JAVA**.
 
 # [Objective](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Assignment.java)
+
+It is advised that before moving on the code understand the [problem statement](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Problem%20Statement.pdf)
   
   This program takes input from "Data.txt" and stores necessary information into variables. Then it creates 20 different gene combinations and then checks for the edit distance while simultaneously printing it in the "Out.txt"
   
 ## **<ins>Member Functions</ins>**
   **<ins>1. printAllNeighboursWEditDistance(ArrayList<ArrayList<String>>, int, int, int, int)**</ins><br/>
-  We first select a string of length L and then check all the strings that are available and check for edit distance and if it satifies then show it in the output file.
+  We first select a string of length L and then check all the strings that are available and check for edit distance and if it satifies then show it in the output file.<br/><br/>
   **<ins>2. calculateEditDistance(String, String, int, int)**</ins><br/>
     This calculates the edit distance between 2 strings and perform operations of insertion,deletion and substitution based on the cost given through input.<br/>
   
