@@ -35,7 +35,7 @@ An IDE that supports Java.
 3. Build the Project.<br />
 4. Run the [Motif_Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Motif%20Search.java) file.<br />
 
-__Check Data.txt and Output.txt for input and output__
+___Check Data.txt and Output.txt for input and output___
   
 # Contact
 ## [Aditya Srivastava](mailto:aditya26052002@gmail.com?subject=GitHub)
