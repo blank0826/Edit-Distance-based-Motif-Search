@@ -23,7 +23,7 @@ The code is written through **JAVA**.
   **<ins>4. hate_speech_detection() [Main Function]</ins>**<br/>
   This is the main function. Initially, streamlit is set up which is used for showing input and output in python code in the form of a website. Then we take input from the user and send it into the decision classifier to tell the category of the comment. Then output it into the website. <br/><br/>
   
-  **Complete Documentation:** [Report](https://github.com/blank0826/HateDetect/blob/master/HateDetect%20Report.pdf)
+  **Complete Documentation:** [Report](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Report.docx)
 
 # Local Setup
 
