@@ -8,7 +8,8 @@ The code is written through **JAVA**.
 
 ### [Edit Distance Motif Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Assignment.java)
 ----
-  **<ins>This program can be divided into 4 sections:</ins>** <br /><br />
+  
+### **<ins>Member Functions</ins>**
   **<ins>1. Dataset**</ins><br/>
   It consisted of 7 columns which consisted of comments, whether it is hateful or can be used in normal language, count of how much of each category is in the comment.<br/>
   
