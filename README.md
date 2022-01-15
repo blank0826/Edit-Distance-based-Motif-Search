@@ -8,7 +8,8 @@ The code is written through **JAVA**.
 
 ### [Edit Distance Motif Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Assignment.java)
 ----
-  **<ins>This program can be divided into 4 sections:</ins>** <br /><br />
+  
+### **<ins>Member Functions</ins>**
   **<ins>1. Dataset**</ins><br/>
   It consisted of 7 columns which consisted of comments, whether it is hateful or can be used in normal language, count of how much of each category is in the comment.<br/>
   
@@ -23,7 +24,7 @@ The code is written through **JAVA**.
   **<ins>4. hate_speech_detection() [Main Function]</ins>**<br/>
   This is the main function. Initially, streamlit is set up which is used for showing input and output in python code in the form of a website. Then we take input from the user and send it into the decision classifier to tell the category of the comment. Then output it into the website. <br/><br/>
   
-  **Complete Documentation:** [Report](https://github.com/blank0826/HateDetect/blob/master/HateDetect%20Report.pdf)
+  **Complete Documentation:** [Report](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Report.docx)
 
 # Local Setup
 
@@ -33,13 +34,9 @@ An IDE that supports Java.
 1. Pull this code into any folder.<br />
 2. Open this folder in your preferred IDE.<br />
 3. Build the Project.<br />
-4. Run the [Motif_Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Assignment.java) file.<br />
+4. Run the [Motif_Search](https://github.com/blank0826/Edit-Distance-based-Motif-Search/blob/master/Motif%20Search.java) file.<br />
 
-# Screenshots
-## **<ins>Output**</ins><br/><br/>
-
-<img src="https://user-images.githubusercontent.com/33955028/149612902-a9e61fe6-5af9-4d39-b5e9-78a1b0fd9d4a.png" width="620" height="400">
-<img src="https://user-images.githubusercontent.com/33955028/149612820-14f2cc35-3f39-4a0f-9ecd-f9fac62ba1e2.png" width="620" height="400">
+___Check Data.txt and Output.txt for input and output respectively.___
   
 # Contact
 ## [Aditya Srivastava](mailto:aditya26052002@gmail.com?subject=GitHub)
